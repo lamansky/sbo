@@ -1,0 +1,45 @@
+{
+  "name": "sbo",
+  "version": "1.0.0",
+  "description": "Support the Bind Operator",
+  "keywords": [
+    "bind",
+    "bind operator",
+    "bindable",
+    "function"
+  ],
+  "author": "John Lamansky",
+  "license": "MIT",
+  "homepage": "https://github.com/lamansky/sbo",
+  "repository": "lamansky/sbo",
+  "main": "index.js",
+  "files": [],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "array-pad": "0.0.1",
+    "dot-prop": "^4.2.0",
+    "is-global-object": "^1.0.0",
+    "is-nil": "^1.0.1",
+    "is-object": "^1.0.1",
+    "ofn": "^1.0.0",
+    "wfn": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-lamansky": "^1.0.0",
+    "mocha": "^5.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "lamansky",
+    "env": {
+      "mocha": true
+    },
+    "rules": {
+      "no-invalid-this": 0
+    }
+  }
+}
