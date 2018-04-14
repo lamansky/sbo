@@ -18,9 +18,11 @@ The module exports a single function.
 
 ### Parameters
 
-1. Optional: `i` (integer): The argument index at which `this` should be inserted. Defaults to `0`.
-2. Optional: `path` (string): The dot-separated key path of an options object argument located at index `i` into which `this` should be inserted.
-3. `fn` (Function): The function which should receive bind operator support.
+1. Optional: Object argument:
+    * Optional: `arg` (integer): The argument index at which `this` should be inserted. Defaults to `0`.
+    * Optional: `path` (string): The dot-separated key path of an options object argument located at index `arg` into which `this` should be inserted.
+    * Optional: `ignoreThis` (object, array, or function): `this` is ignored if `ignoreThis` strictly equals `this`, or if `ignoreThis` is an array containing `this`, or if `ignoreThis` is a function which returns `true` when given `this`.
+2. `fn` (Function): The function which should receive bind operator support.
 
 ### Return Value
 
@@ -60,7 +62,7 @@ A bound `this` would now need to become the argument with an index of 1. To do t
 
 ```javascript
 const supportBindOperator = require('sbo')
-const addSuffix = supportBindOperator(1, (suffix, str) => str + suffix)
+const addSuffix = supportBindOperator({arg: 1}, (suffix, str) => str + suffix)
 
 addSuffix('!', 'Hello, world') // 'Hello, world!'
 'Hello, world'::addSuffix('!') // 'Hello, world!'
@@ -78,7 +80,7 @@ Do the following to direct a bound `this` to the `str` key of the object argumen
 
 ```javascript
 const supportBindOperator = require('sbo')
-const addSuffix = supportBindOperator(0, 'str', ({str, suffix}) => str + suffix)
+const addSuffix = supportBindOperator({path: 'str'}, ({str, suffix}) => str + suffix)
 
 addSuffix({str: 'Hello, world', suffix: '!'}) // 'Hello, world!'
 'Hello, world'::addSuffix({suffix: '!'}) // 'Hello, world!'
@@ -86,6 +88,6 @@ addSuffix({str: 'Hello, world', suffix: '!'}) // 'Hello, world!'
 
 If you have a nested object parameter, you can use a dot-separated key path.
 
-## Related Modules
+## Related
 
 For more projects like this, check out the [xfn](https://github.com/lamansky/xfn) family of modules.

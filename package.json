@@ -20,10 +20,12 @@
   "dependencies": {
     "array-pad": "0.0.1",
     "dot-prop": "^4.2.0",
+    "ffn": "^2.1.0",
     "is-global-object": "^1.0.0",
     "is-nil": "^1.0.1",
     "is-object": "^1.0.1",
     "ofn": "^1.0.0",
+    "plainify": "^1.0.0",
     "wfn": "^1.0.0"
   },
   "devDependencies": {

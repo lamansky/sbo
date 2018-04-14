@@ -40,13 +40,37 @@ describe('supportBindOperator()', function () {
     const val1 = 'test1'
     const val2 = 'test2'
     let args
+    supportBindOperator({arg: 1}, (...a) => { args = a }).call(_this, val1, val2)
+    assert.strictEqual(args[0], val1)
+    assert.strictEqual(args[1], _this)
+    assert.strictEqual(args[2], val2)
+  })
+
+  it('should support making `this` the nth argument (backcompat API)', function () {
+    const _this = {}
+    const val1 = 'test1'
+    const val2 = 'test2'
+    let args
     supportBindOperator(1, (...a) => { args = a }).call(_this, val1, val2)
     assert.strictEqual(args[0], val1)
     assert.strictEqual(args[1], _this)
     assert.strictEqual(args[2], val2)
   })
 
-  it('should support assigning `this` to an object argument via a dot path', function () {
+  it('should assign `this` to object arg via dot path', function () {
+    const _this = {}
+    const val1 = 'test1'
+    const val2 = 'test2'
+    let args
+    supportBindOperator({arg: 2, path: 'options.context'}, (...a) => { args = a }).call(_this, val1, val2)
+    assert.strictEqual(args[0], val1)
+    assert.strictEqual(args[1], val2)
+    assert(isObject(args[2]))
+    assert(isObject(args[2].options))
+    assert.strictEqual(args[2].options.context, _this)
+  })
+
+  it('should assign `this` to object arg via dot path (backcompat API)', function () {
     const _this = {}
     const val1 = 'test1'
     const val2 = 'test2'
@@ -57,5 +81,30 @@ describe('supportBindOperator()', function () {
     assert(isObject(args[2]))
     assert(isObject(args[2].options))
     assert.strictEqual(args[2].options.context, _this)
+  })
+
+  it('should ignore `this` if it’s blacklisted', function () {
+    const _this = {}
+    let arg
+    supportBindOperator((a) => { arg = a }).call(_this)
+    assert.strictEqual(arg, _this)
+    supportBindOperator({ignoreThis: {}}, (a) => { arg = a }).call(_this)
+    assert.strictEqual(arg, _this)
+    supportBindOperator({ignoreThis: _this}, (a) => { arg = a }).call(_this)
+    assert.notStrictEqual(arg, _this)
+  })
+
+  it('should ignore `this` if it’s in a blacklist array', function () {
+    const _this = {}
+    let arg
+    supportBindOperator({ignoreThis: [_this]}, (a) => { arg = a }).call(_this)
+    assert.notStrictEqual(arg, _this)
+  })
+
+  it('should ignore `this` if a blacklist function returns true', function () {
+    const _this = {}
+    let arg
+    supportBindOperator({ignoreThis: x => x === _this}, (a) => { arg = a }).call(_this)
+    assert.notStrictEqual(arg, _this)
   })
 })
