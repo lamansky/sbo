@@ -10,7 +10,7 @@ const plainify = require('plainify')
 const {set} = require('dot-prop')
 const wfn = require('wfn')
 
-module.exports = ofn([2, 0, 1], (options, bcPath, f) => wfn(f, function () {
+module.exports = ofn([2, 0, 1], (options, bcPath, f) => wfn(f, function supportBindOperator () {
   const {arg: i = 0, path = bcPath, ignoreThis} = plainify('arg', options)
   const args = arrayPad(Array.from(arguments), i)
   if (!isNil(this) && !isGlobalObject(this) && !ffn(ignoreThis, {blacklist: true})(this)) {
