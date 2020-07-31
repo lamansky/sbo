@@ -22,18 +22,18 @@
   },
   "dependencies": {
     "array-pad": "0.0.1",
-    "dot-prop": "^4.2.0",
     "ffn": "^2.1.0",
     "is-global-object": "^1.0.0",
     "is-nil": "^1.0.1",
     "is-object": "^1.0.1",
     "ofn": "^1.0.0",
     "plainify": "^1.0.0",
+    "set-value": "^3.0.2",
     "wfn": "^1.0.0"
   },
   "devDependencies": {
-    "eslint-config-lamansky": "^1.0.0",
-    "mocha": "^5.1.0"
+    "eslint-config-lamansky": "^2.0.0",
+    "mocha": "^7.2.0"
   },
   "scripts": {
     "test": "mocha"

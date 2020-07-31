@@ -7,7 +7,7 @@ const isNil = require('is-nil')
 const isObject = require('is-object')
 const ofn = require('ofn')
 const plainify = require('plainify')
-const {set} = require('dot-prop')
+const set = require('set-value')
 const wfn = require('wfn')
 
 module.exports = ofn([2, 0, 1], (options, bcPath, f) => wfn(f, function supportBindOperator () {
