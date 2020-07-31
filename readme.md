@@ -1,8 +1,8 @@
 # sbo
 
-Support the [Bind Operator](https://github.com/tc39/proposal-bind-operator). Future-proof your function.
+SBO stands for Support the [Bind Operator](https://github.com/tc39/proposal-bind-operator).
 
-Converts `value::yourFunction(arg)` to `yourFunction(value, arg)` — but lets you use either.
+Converts `value::yourFunction(arg)` to `yourFunction(value, arg)`—but lets your function support either.
 
 ## Installation
 
