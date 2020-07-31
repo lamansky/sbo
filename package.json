@@ -8,7 +8,10 @@
     "bindable",
     "function"
   ],
-  "author": "John Lamansky",
+  "author": {
+    "name": "Fr. John Lamansky",
+    "url": "lamansky.com"
+  },
   "license": "MIT",
   "homepage": "https://github.com/lamansky/sbo",
   "repository": "lamansky/sbo",
