@@ -90,4 +90,16 @@ If you have a nested object parameter, you can use a dot-separated key path.
 
 ## Related
 
-For more projects like this, check out the [xfn](https://github.com/lamansky/xfn) family of modules.
+Check out these other function utility packages.
+
+* [efn](https://github.com/lamansky/efn): Extracted Function
+* [ffn](https://github.com/lamansky/ffn): Filtering Function
+* [jfn](https://github.com/lamansky/jfn): Joined Function
+* [mfn](https://github.com/lamansky/mfn): Memoized Function
+* [ofn](https://github.com/lamansky/ofn): Overloaded Function
+* [pfn](https://github.com/lamansky/pfn): Possible Function
+* [qfn](https://github.com/lamansky/qfn): Qualified Function
+* [vfn](https://github.com/lamansky/vfn): Variadic Function
+* [wfn](https://github.com/lamansky/wfn): Wrapper Function
+* [xfn](https://github.com/lamansky/xfn): Extended Function
+* [3fn](https://github.com/lamansky/3fn): Three-Way Comparison Function
