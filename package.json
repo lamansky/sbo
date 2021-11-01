@@ -28,7 +28,7 @@
     "is-object": "^1.0.1",
     "ofn": "^1.0.0",
     "plainify": "^1.0.0",
-    "set-value": "^3.0.2",
+    "set-value": "^4.0.1",
     "wfn": "^1.0.0"
   },
   "devDependencies": {
