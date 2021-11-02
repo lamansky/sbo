@@ -25,10 +25,10 @@
     "ffn": "^2.1.0",
     "is-global-object": "^1.0.0",
     "is-nil": "^1.0.1",
-    "is-object": "^1.0.1",
+    "is-object": "^1.0.2",
     "ofn": "^1.0.0",
     "plainify": "^1.0.0",
-    "set-value": "^3.0.2",
+    "set-value": "^4.1.0",
     "wfn": "^1.0.0"
   },
   "devDependencies": {
